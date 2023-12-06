@@ -13,7 +13,7 @@ import { RouteRecordName, RouteRecordRaw, createRouter, createWebHistory } from 
 const routes: RouteRecordRaw[] = [
     {
         path: PATH.ONE,
-        component: () => import("@/components/HelloWorld.vue"),
+        component: () => import("@/modules/recharge_payments/views/Balance.view.vue"),
         name: "one",
     },
     {
