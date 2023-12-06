@@ -18,7 +18,7 @@ const routes: RouteRecordRaw[] = [
     },
     {
         path: PATH.SECOND,
-        component: () => import("@/components/HelloWorld.vue"),
+        component: () => import("@/modules/recharge_payments/views/Provider.view.vue"),
         name: "second",
     },
     {
