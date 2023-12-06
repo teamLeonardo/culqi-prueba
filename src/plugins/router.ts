@@ -6,6 +6,7 @@ export const PATH = {
 
 import { utils } from "@/shared/utils";
 
+
 import { RouteRecordName, RouteRecordRaw, createRouter, createWebHistory } from "vue-router";
 
 
@@ -22,16 +23,23 @@ const routes: RouteRecordRaw[] = [
     },
     {
         path: PATH.ERROR,
-        component: () => import("@/components/HelloWorld.vue"),
+        component: () => import("@/modules/error/views/Token.view.vue"),
         name: "error",
     },
-]
+    {
+        path: '/:pathMatch(.*)*',
+        component: () => import("@/modules/error/views/NotFound.view.vue"),
+        name: "notfound"
+    },
+];
+
 
 const mapRouter: { name: string | RouteRecordName, path: string }[] = routes.map(
     ({ path, name }) => (
         { path: path || "", name: name || "" }
     )
-).filter(({ name }) => !!name)
+).filter(({ name }) => !!name);
+
 
 const router = createRouter({
     routes,
@@ -44,6 +52,7 @@ router.beforeEach((...guard) => {
     if (utils.isToken === false) next({ name: "error" })
     else next()
 })
+
 
 export {
     router,
