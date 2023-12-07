@@ -8,5 +8,5 @@ export const GetBalance = async () => {
 
 
 export const GetProviders = async () => {
-    return (await CulqiAxios.get("/getProviders")).data as IProvider[]
+    return (await CulqiAxios.get("/getProviders")).data.data.companies as IProvider[]
 }
