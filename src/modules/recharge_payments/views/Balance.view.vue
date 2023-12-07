@@ -60,7 +60,7 @@ setNamePage("Recargas y pagos")
                 <span>
                     Codigo para cargar tu codigo:
                 </span>
-                <a href="_blank" class="text-[#22a7a2] font-semibold" aria-hidden="true">
+                <a href="#" target=”_blank” class="text-[#22a7a2] font-semibold" aria-hidden="true">
                     {12345678901}
                 </a>
             </div>
