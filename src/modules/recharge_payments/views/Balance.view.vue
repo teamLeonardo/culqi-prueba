@@ -60,7 +60,7 @@ setNamePage("Recargas y pagos")
                 <span>
                     Codigo para cargar tu codigo:
                 </span>
-                <div class="text-[#09A49E] font-semibold" aria-hidden="true">
+                <div class="text-[#22a7a2] font-semibold" aria-hidden="true">
                     {12345678901}
                 </div>
             </div>
