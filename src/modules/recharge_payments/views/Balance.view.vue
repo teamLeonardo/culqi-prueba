@@ -60,9 +60,9 @@ setNamePage("Recargas y pagos")
                 <span>
                     Codigo para cargar tu codigo:
                 </span>
-                <div class="text-[#22a7a2] font-semibold" aria-hidden="true">
+                <a href="_blank" class="text-[#22a7a2] font-semibold" aria-hidden="true">
                     {12345678901}
-                </div>
+                </a>
             </div>
             <hr>
             <ListMethod />
