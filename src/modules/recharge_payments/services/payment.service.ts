@@ -3,7 +3,7 @@ import { IBalance, IProvider } from "./payment.type"
 
 
 export const GetBalance = async () => {
-    return (await CulqiAxios.get("/getActualBalance")).data as IBalance
+    return (await CulqiAxios.get("/getActualBalance")).data.data as IBalance
 }
 
 
