@@ -1,17 +1,23 @@
 <script setup lang="ts">
-import useSWRV from 'swrv';
-import { GetBalance } from '../services/payment.service';
-import { utils } from '@/shared/utils';
-// import LocalStorageCache from 'swrv/dist/cache/adapters/localStorage';
-import { useRouter } from 'vue-router';
-import { PATH } from '@/plugins/router';
-import LoadLabel from './LoadLabel.vue';
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import useSWRV from 'swrv';
+import LocalStorageCache from 'swrv/dist/cache/adapters/localStorage';
+
+import { utils } from '@/shared/utils';
+import { PATH } from '@/plugins/router';
+
+import { GetBalance } from '../services/payment.service';
+import LoadLabel from './LoadLabel.vue';
 
 const { push } = useRouter()
 
+const clickLoad = ref(false)
 
-const { data: balance, mutate, error, isValidating } = useSWRV('/getActualBalance', GetBalance)
+const { data: balance, mutate, error, isValidating } = useSWRV('/getActualBalance', GetBalance, {
+    cache: new LocalStorageCache('swrv'),
+    shouldRetryOnError: false
+})
 
 const data = ref(balance)
 
@@ -22,12 +28,14 @@ if (error && !data.value?.balanceCommerce) {
 }
 
 const reloadData = async () => {
+    clickLoad.value = true
     data.value = undefined
     await mutate()
+    clickLoad.value = false
 };
 </script>
 <template>
-    <template v-if="isValidating">
+    <template v-if="isValidating && clickLoad">
         <LoadLabel></LoadLabel>
     </template>
     <template v-else>

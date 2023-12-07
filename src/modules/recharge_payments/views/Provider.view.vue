@@ -1,16 +1,11 @@
 
 <script setup lang="ts">
-// import { onMounted } from 'vue';
 import ListProvider from '../components/ListProvider.vue';
 import PaymentLayout from '../layouts/Payment.layout.vue';
 import { useAppStore } from '@/stores/app.store';
 const { setNamePage } = useAppStore()
 
 setNamePage("Recargas")
-
-// onUnmounted(() => {
-//     setNamePage("")
-// })
 
 </script>
 <template>
