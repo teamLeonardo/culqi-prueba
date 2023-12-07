@@ -3,7 +3,7 @@
 import { PATH } from '@/plugins/router';
 </script>
 <template>
-    <div class="w-full mt-5 grid gap-4">
+    <div class="w-full mt-5 grid gap-4 text-[#151929]">
         <RouterLink :to="PATH.SECOND">
             <div class="w-full bg-slate-100 grid grid-cols-[auto,1fr] gap-4 px-4 py-4 rounded-lg ">
                 <div class="bg-[#EB6F25] w-[40px] h-[40px] p-2 rounded-lg">

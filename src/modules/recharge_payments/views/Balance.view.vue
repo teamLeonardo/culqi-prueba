@@ -12,7 +12,7 @@ setNamePage("Recargas y pagos")
 </script>
 <template>
     <PaymentLayout>
-        <div class="text-[#151929] px-6 mt-6 lg:mt-12 lg:px-20">
+        <div class="px-6 mt-6 lg:mt-12 lg:px-20">
             <span class="text-lg lg:text-xl text-[#6A7789] flex items-center gap-2 mb-4">Saldo vitual
                 <div class="w-[18px] lg:w-[20px]">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#09A49E">
@@ -32,7 +32,7 @@ setNamePage("Recargas y pagos")
                     </svg>
                 </div>
             </span>
-            <div class="w-full min-h-[40px] flex overflow-hidden gap-2">
+            <div class="w-full text-[#151929] min-h-[40px] flex overflow-hidden gap-2">
                 <Suspense>
                     <LabelBalance />
                     <template #fallback>
@@ -41,7 +41,7 @@ setNamePage("Recargas y pagos")
                 </Suspense>
             </div>
 
-            <div class="w-full my-6">
+            <div class="w-full my-6 text-[#151929]">
                 <div class="w-fit 
                 py-1 
                 px-7 
@@ -57,12 +57,12 @@ setNamePage("Recargas y pagos")
                 </div>
             </div>
             <div class="w-full my-5 flex gap-2">
-                <span>
+                <span class="text-[#151929]">
                     Codigo para cargar tu codigo:
                 </span>
-                <a href="#" target=”_blank” class="text-[#22a7a2] font-semibold" aria-hidden="true">
+                <button class="text-[#22a7a2] font-semibold">
                     {12345678901}
-                </a>
+                </button>
             </div>
             <hr>
             <ListMethod />
