@@ -4,7 +4,9 @@ import HeaderUi from '../components/Header.ui.vue';
 <template>
     <div class="w-screen h-screen overflow-auto">
         <div class="max-w-3xl m-auto h-full">
-            <HeaderUi />
+            <Suspense>
+                <HeaderUi />
+            </Suspense>
             <slot></slot>
 
         </div>
