@@ -1,14 +1,14 @@
-
 <script setup lang="ts">
-// import { onMounted } from 'vue';
-import { RouterLink } from 'vue-router';
-import PaymentLayout from '../layouts/Payment.layout.vue';
-import { useAppStore } from '@/stores/app.store';
 import { PATH } from '@/plugins/router';
+import { useAppStore } from '@/stores/app.store';
 import LabelBalance from '../components/LabelBalance.vue';
+import LoadLabel from '../components/LoadLabel.vue';
+import PaymentLayout from '../layouts/Payment.layout.vue';
 const { setNamePage } = useAppStore()
 
 setNamePage("Recargas y pagos")
+
+// const LabelBalance = () => import("../components/LabelBalance.vue")
 
 </script>
 <template>
@@ -33,12 +33,17 @@ setNamePage("Recargas y pagos")
                     </svg>
                 </div>
             </span>
-            <Suspense>
-                <LabelBalance />
-                <template #fallback>
-                    ...cargando
-                </template>
-            </Suspense>
+            <div class="w-full min-h-[40px] flex overflow-hidden gap-2">
+                <Suspense>
+                    <template #default>
+                        <LabelBalance />
+                    </template>
+                    <template #fallback>
+                        <LoadLabel />
+                    </template>
+                </Suspense>
+            </div>
+
             <div class="w-full my-6">
                 <div class="w-fit 
                 py-1 
